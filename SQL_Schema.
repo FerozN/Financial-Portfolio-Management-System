@@ -1,0 +1,90 @@
+```sql
+
+CREATE TABLE ACCOUNT (
+    ACCID INT,
+    PRIMARY KEY(ACCID),
+    Acc_Name VARCHAR(50),
+    Password VARCHAR(100),
+    Status VARCHAR(50)
+);
+
+CREATE TABLE Users (
+    ACCID INT,
+    FOREIGN KEY(ACCID) REFERENCES ACCOUNT(ACCID),
+    PRIMARY KEY(ACCID),
+    Email VARCHAR(50),
+    PhoneNumber VARCHAR(50)
+);
+
+CREATE TABLE FinancialData (
+    DataID INTEGER(10),
+    Volume DOUBLE(10,2),
+    Price DOUBLE(10,2),
+    Symbol VARCHAR(255),
+    Watchlist BIT,
+    Dname VARCHAR(255),
+    The_type VARCHAR(255),
+    PRIMARY KEY (DataID)
+);
+
+CREATE TABLE Portfolio (
+    PortfolioID INTEGER(10),
+    Settings VARCHAR(255),
+    FinancialDataDataID INTEGER(10),
+    Balance INTEGER(10),
+    Performance VARCHAR(255),
+    PRIMARY KEY (PortfolioID),
+    FOREIGN KEY (FinancialDataDataID) REFERENCES FinancialData(DataID)
+);
+
+CREATE TABLE Transactions (
+    TransactionID INTEGER(10),
+    Dates TIMESTAMP,
+    Amount DOUBLE(10,2),
+    Tran_Type VARCHAR(255),
+    Status VARCHAR(255),
+    PortfolioPortfolioID INTEGER(10),
+    Price DOUBLE(10,2),
+    PRIMARY KEY (TransactionID),
+    FOREIGN KEY (PortfolioPortfolioID) REFERENCES Portfolio(PortfolioID)
+);
+
+CREATE TABLE Watchlist (
+    PortfolioPortfolioID INTEGER(10),
+    Price DOUBLE(10,2),
+    Wname VARCHAR(255),
+    PRIMARY KEY (PortfolioPortfolioID),
+    FOREIGN KEY (PortfolioPortfolioID) REFERENCES Portfolio(PortfolioID)
+);
+
+CREATE TABLE Crypto (
+    CryptoID INTEGER(10),
+    FinancialDataDataID INTEGER(10),
+    MaxSupply DOUBLE(10,2),
+    PRIMARY KEY (CryptoID),
+    FOREIGN KEY (FinancialDataDataID) REFERENCES FinancialData(DataID)
+);
+
+CREATE TABLE Stocks (
+    StockID INTEGER(10),
+    FinancialDataDataID INTEGER(10),
+    Exchange VARCHAR(255),
+    PE_Ratio DOUBLE(10,2),
+    Dividend_yield DOUBLE(10,2),
+    Time_Stamp TIMESTAMP,
+    MarketCap DOUBLE(10,2),
+    PRIMARY KEY (StockID),
+    FOREIGN KEY (FinancialDataDataID) REFERENCES FinancialData(DataID)
+);
+
+CREATE TABLE Personal_Accounts (
+    AccountID INTEGER(10),
+    AccountPortfolio INTEGER(10),
+    PortfolioType VARCHAR(255),
+    PrimaryUser VARCHAR(255),
+    AvailableFunds DOUBLE(10,2),
+    TotalBalance DOUBLE(10,2),
+    AllTimeReturn DOUBLE(10,2),
+    PRIMARY KEY (AccountID),
+    FOREIGN KEY (AccountPortfolio) REFERENCES Portfolio(PortfolioID)
+);
