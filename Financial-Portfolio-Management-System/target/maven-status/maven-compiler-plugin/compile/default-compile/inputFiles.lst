@@ -1,0 +1,13 @@
+/home/student/Documents/Lab4/src/main/java/torontomu/ca/lab4/Persistence/Personal_Accounts_CRUD.java
+/home/student/Documents/Lab4/src/main/java/torontomu/ca/lab4/Business/MenuServlet.java
+/home/student/Documents/Lab4/src/main/java/torontomu/ca/lab4/Helper/FinancialData.java
+/home/student/Documents/Lab4/src/main/java/torontomu/ca/lab4/Business/TradingServlet.java
+/home/student/Documents/Lab4/src/main/java/torontomu/ca/lab4/Helper/UserData.java
+/home/student/Documents/Lab4/src/main/java/torontomu/ca/lab4/Business/Login.java
+/home/student/Documents/Lab4/src/main/java/torontomu/ca/lab4/Helper/WatchlistItem.java
+/home/student/Documents/Lab4/src/main/java/torontomu/ca/lab4/Helper/PersonalAccountData.java
+/home/student/Documents/Lab4/src/main/java/torontomu/ca/lab4/Persistence/Transactions_CRUD.java
+/home/student/Documents/Lab4/src/main/java/torontomu/ca/lab4/Persistence/Watchlist_CRUD.java
+/home/student/Documents/Lab4/src/main/java/torontomu/ca/lab4/Helper/TransactionData.java
+/home/student/Documents/Lab4/src/main/java/torontomu/ca/lab4/Persistence/Financial_Data_CRUD.java
+/home/student/Documents/Lab4/src/main/java/torontomu/ca/lab4/Persistence/user_CRUD.java
